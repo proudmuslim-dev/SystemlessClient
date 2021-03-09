@@ -27,7 +27,7 @@ object Installer {
         val accept = args.exists("accept")
 
         if (!accept) {
-            val r = JOptionPane.showConfirmDialog(null, "Do you agree to installing Systemless Client?")
+            val r = JOptionPane.showConfirmDialog(null, "Do you agree to installing ModCore Client?")
             if (r != JOptionPane.YES_OPTION) exitProcess(0)
         }
 
@@ -48,6 +48,7 @@ object Installer {
 
         println("Created version file")
 
+        // To be changed
         val url =
             URL("https://github.com/ChachyDev/SystemlessClient/releases/download/0.0.1-master-dev/SystemlessClient-0.0.1-master-dev.jar")
 
@@ -86,14 +87,14 @@ object Installer {
             val profiles = json["profiles"].asJsonObject
             val profileObj = JsonObject()
             val instant = Instant.ofEpochMilli(System.currentTimeMillis())
-            profileObj.addProperty("name", "Systemless")
-            profileObj.addProperty("lastVersionId", "Systemless")
+            profileObj.addProperty("name", "ModCore")
+            profileObj.addProperty("lastVersionId", "ModCore")
             profileObj.addProperty("type", "custom")
             profileObj.addProperty("created", instant.toString())
             profileObj.addProperty("lastUsed", instant.toString())
             profileObj.addProperty("icon", "Furnace")
-            profiles.add("Systemless", profileObj)
-            json.addProperty("selectedProfile", "Systemless")
+            profiles.add("ModCore", profileObj)
+            json.addProperty("selectedProfile", "ModCore")
             println("Appended to file")
             profile.writeText(Gson().toJson(json))
             println("Saved to file")

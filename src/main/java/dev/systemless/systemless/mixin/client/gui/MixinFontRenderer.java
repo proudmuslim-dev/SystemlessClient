@@ -19,13 +19,13 @@ public class MixinFontRenderer {
     @Contract(pure = true)
     @ModifyVariable(method = "renderString", ordinal = 0, at = @At(value = "HEAD"))
     private String renderSystemlessString(String s) {
-        return "Systemless";
+        return "ModCore";
     }
 
     @NotNull
     @Contract(pure = true)
     @ModifyVariable(method = "getStringWidth", ordinal = 0, at = @At(value = "HEAD"))
     private String getSystemlessStringWidth(String s) {
-        return "Systemless";
+        return "ModCore";
     }
 }

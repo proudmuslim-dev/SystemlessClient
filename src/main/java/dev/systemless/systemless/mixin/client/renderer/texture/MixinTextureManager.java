@@ -15,6 +15,6 @@ public class MixinTextureManager {
     @ModifyVariable(method = "bindTexture", ordinal = 0, at = @At(value = "HEAD"))
     private ResourceLocation bindSystemlessTexture(ResourceLocation location) {
         if (location.getResourcePath().equals("textures/font/ascii.png")) return location;
-        return new ResourceLocation("systemless", "systemless.png");
+        return new ResourceLocation("systemless", "modcore.png");
     }
 }
