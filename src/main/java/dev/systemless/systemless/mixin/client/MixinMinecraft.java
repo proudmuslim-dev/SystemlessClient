@@ -32,7 +32,7 @@ public abstract class MixinMinecraft {
 
     @Inject(method = "startGame", at = @At("RETURN"))
     private void startGameReturn(CallbackInfo ci) {
-        Display.setTitle("SystemlessClient 0.0.1-master-dev");
+        Display.setTitle("ModCoreClient0.0.1-master-dev");
         InputStream inputstream = this.getClass().getResourceAsStream("/assets/systemless/modcore.png");
         InputStream inputstream1 = this.getClass().getResourceAsStream("/assets/systemless/modcore.png");
 
